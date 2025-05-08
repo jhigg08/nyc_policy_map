@@ -1,1 +1,512 @@
-[]
+[
+    {
+      "district": 1,
+      "official": "Council Member 1",
+      "term_start": "2022",
+      "policies": [
+        "Pushed for green energy expansion",
+        "Improved public transportation routes",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 2,
+      "official": "Council Member 2",
+      "term_start": "2020",
+      "policies": [
+        "Advocated for public safety programs",
+        "Championed park renovations",
+        "Launched education funding initiative"
+      ]
+    },
+    {
+      "district": 3,
+      "official": "Council Member 3",
+      "term_start": "2021",
+      "policies": [
+        "Supported local small businesses",
+        "Launched education funding initiative",
+        "Proposed youth employment programs"
+      ]
+    },
+    {
+      "district": 4,
+      "official": "Council Member 4",
+      "term_start": "2021",
+      "policies": [
+        "Pushed for green energy expansion",
+        "Launched education funding initiative",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 5,
+      "official": "Council Member 5",
+      "term_start": "2022",
+      "policies": [
+        "Proposed youth employment programs",
+        "Expanded mental health services",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 6,
+      "official": "Council Member 6",
+      "term_start": "2019",
+      "policies": [
+        "Pushed for green energy expansion",
+        "Expanded mental health services",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 7,
+      "official": "Council Member 7",
+      "term_start": "2020",
+      "policies": [
+        "Championed park renovations",
+        "Sponsored clean streets campaign",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 8,
+      "official": "Council Member 8",
+      "term_start": "2022",
+      "policies": [
+        "Supported local small businesses",
+        "Introduced affordable housing reform",
+        "Expanded mental health services"
+      ]
+    },
+    {
+      "district": 9,
+      "official": "Council Member 9",
+      "term_start": "2020",
+      "policies": [
+        "Launched education funding initiative",
+        "Sponsored clean streets campaign",
+        "Improved public transportation routes"
+      ]
+    },
+    {
+      "district": 10,
+      "official": "Council Member 10",
+      "term_start": "2023",
+      "policies": [
+        "Supported local small businesses",
+        "Sponsored clean streets campaign",
+        "Pushed for green energy expansion"
+      ]
+    },
+    {
+      "district": 11,
+      "official": "Council Member 11",
+      "term_start": "2023",
+      "policies": [
+        "Improved public transportation routes",
+        "Proposed youth employment programs",
+        "Supported local small businesses"
+      ]
+    },
+    {
+      "district": 12,
+      "official": "Council Member 12",
+      "term_start": "2019",
+      "policies": [
+        "Sponsored clean streets campaign",
+        "Advocated for public safety programs",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 13,
+      "official": "Council Member 13",
+      "term_start": "2022",
+      "policies": [
+        "Launched education funding initiative",
+        "Pushed for green energy expansion",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 14,
+      "official": "Council Member 14",
+      "term_start": "2019",
+      "policies": [
+        "Proposed youth employment programs",
+        "Sponsored clean streets campaign",
+        "Expanded mental health services"
+      ]
+    },
+    {
+      "district": 15,
+      "official": "Council Member 15",
+      "term_start": "2020",
+      "policies": [
+        "Proposed youth employment programs",
+        "Pushed for green energy expansion",
+        "Expanded mental health services"
+      ]
+    },
+    {
+      "district": 16,
+      "official": "Council Member 16",
+      "term_start": "2023",
+      "policies": [
+        "Introduced affordable housing reform",
+        "Launched education funding initiative",
+        "Sponsored clean streets campaign"
+      ]
+    },
+    {
+      "district": 17,
+      "official": "Council Member 17",
+      "term_start": "2020",
+      "policies": [
+        "Pushed for green energy expansion",
+        "Introduced affordable housing reform",
+        "Supported local small businesses"
+      ]
+    },
+    {
+      "district": 18,
+      "official": "Council Member 18",
+      "term_start": "2020",
+      "policies": [
+        "Expanded mental health services",
+        "Improved public transportation routes",
+        "Launched education funding initiative"
+      ]
+    },
+    {
+      "district": 19,
+      "official": "Council Member 19",
+      "term_start": "2021",
+      "policies": [
+        "Proposed youth employment programs",
+        "Introduced affordable housing reform",
+        "Supported local small businesses"
+      ]
+    },
+    {
+      "district": 20,
+      "official": "Council Member 20",
+      "term_start": "2021",
+      "policies": [
+        "Sponsored clean streets campaign",
+        "Improved public transportation routes",
+        "Proposed youth employment programs"
+      ]
+    },
+    {
+      "district": 21,
+      "official": "Council Member 21",
+      "term_start": "2022",
+      "policies": [
+        "Improved public transportation routes",
+        "Championed park renovations",
+        "Pushed for green energy expansion"
+      ]
+    },
+    {
+      "district": 22,
+      "official": "Council Member 22",
+      "term_start": "2019",
+      "policies": [
+        "Launched education funding initiative",
+        "Championed park renovations",
+        "Expanded mental health services"
+      ]
+    },
+    {
+      "district": 23,
+      "official": "Council Member 23",
+      "term_start": "2022",
+      "policies": [
+        "Expanded mental health services",
+        "Supported local small businesses",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 24,
+      "official": "Council Member 24",
+      "term_start": "2023",
+      "policies": [
+        "Expanded mental health services",
+        "Championed park renovations",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 25,
+      "official": "Council Member 25",
+      "term_start": "2023",
+      "policies": [
+        "Supported local small businesses",
+        "Expanded mental health services",
+        "Sponsored clean streets campaign"
+      ]
+    },
+    {
+      "district": 26,
+      "official": "Council Member 26",
+      "term_start": "2023",
+      "policies": [
+        "Expanded mental health services",
+        "Pushed for green energy expansion",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 27,
+      "official": "Council Member 27",
+      "term_start": "2023",
+      "policies": [
+        "Championed park renovations",
+        "Advocated for public safety programs",
+        "Expanded mental health services"
+      ]
+    },
+    {
+      "district": 28,
+      "official": "Council Member 28",
+      "term_start": "2021",
+      "policies": [
+        "Championed park renovations",
+        "Pushed for green energy expansion",
+        "Sponsored clean streets campaign"
+      ]
+    },
+    {
+      "district": 29,
+      "official": "Council Member 29",
+      "term_start": "2020",
+      "policies": [
+        "Proposed youth employment programs",
+        "Championed park renovations",
+        "Sponsored clean streets campaign"
+      ]
+    },
+    {
+      "district": 30,
+      "official": "Council Member 30",
+      "term_start": "2020",
+      "policies": [
+        "Championed park renovations",
+        "Supported local small businesses",
+        "Sponsored clean streets campaign"
+      ]
+    },
+    {
+      "district": 31,
+      "official": "Council Member 31",
+      "term_start": "2021",
+      "policies": [
+        "Expanded mental health services",
+        "Launched education funding initiative",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 32,
+      "official": "Council Member 32",
+      "term_start": "2023",
+      "policies": [
+        "Advocated for public safety programs",
+        "Launched education funding initiative",
+        "Improved public transportation routes"
+      ]
+    },
+    {
+      "district": 33,
+      "official": "Council Member 33",
+      "term_start": "2021",
+      "policies": [
+        "Advocated for public safety programs",
+        "Sponsored clean streets campaign",
+        "Pushed for green energy expansion"
+      ]
+    },
+    {
+      "district": 34,
+      "official": "Council Member 34",
+      "term_start": "2020",
+      "policies": [
+        "Expanded mental health services",
+        "Championed park renovations",
+        "Improved public transportation routes"
+      ]
+    },
+    {
+      "district": 35,
+      "official": "Council Member 35",
+      "term_start": "2023",
+      "policies": [
+        "Introduced affordable housing reform",
+        "Championed park renovations",
+        "Improved public transportation routes"
+      ]
+    },
+    {
+      "district": 36,
+      "official": "Council Member 36",
+      "term_start": "2019",
+      "policies": [
+        "Expanded mental health services",
+        "Improved public transportation routes",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 37,
+      "official": "Council Member 37",
+      "term_start": "2021",
+      "policies": [
+        "Improved public transportation routes",
+        "Proposed youth employment programs",
+        "Championed park renovations"
+      ]
+    },
+    {
+      "district": 38,
+      "official": "Council Member 38",
+      "term_start": "2021",
+      "policies": [
+        "Championed park renovations",
+        "Launched education funding initiative",
+        "Improved public transportation routes"
+      ]
+    },
+    {
+      "district": 39,
+      "official": "Council Member 39",
+      "term_start": "2019",
+      "policies": [
+        "Pushed for green energy expansion",
+        "Introduced affordable housing reform",
+        "Supported local small businesses"
+      ]
+    },
+    {
+      "district": 40,
+      "official": "Council Member 40",
+      "term_start": "2022",
+      "policies": [
+        "Expanded mental health services",
+        "Advocated for public safety programs",
+        "Sponsored clean streets campaign"
+      ]
+    },
+    {
+      "district": 41,
+      "official": "Council Member 41",
+      "term_start": "2022",
+      "policies": [
+        "Expanded mental health services",
+        "Improved public transportation routes",
+        "Advocated for public safety programs"
+      ]
+    },
+    {
+      "district": 42,
+      "official": "Council Member 42",
+      "term_start": "2020",
+      "policies": [
+        "Advocated for public safety programs",
+        "Proposed youth employment programs",
+        "Improved public transportation routes"
+      ]
+    },
+    {
+      "district": 43,
+      "official": "Council Member 43",
+      "term_start": "2019",
+      "policies": [
+        "Pushed for green energy expansion",
+        "Sponsored clean streets campaign",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 44,
+      "official": "Council Member 44",
+      "term_start": "2019",
+      "policies": [
+        "Supported local small businesses",
+        "Pushed for green energy expansion",
+        "Expanded mental health services"
+      ]
+    },
+    {
+      "district": 45,
+      "official": "Council Member 45",
+      "term_start": "2022",
+      "policies": [
+        "Introduced affordable housing reform",
+        "Proposed youth employment programs",
+        "Pushed for green energy expansion"
+      ]
+    },
+    {
+      "district": 46,
+      "official": "Council Member 46",
+      "term_start": "2022",
+      "policies": [
+        "Supported local small businesses",
+        "Launched education funding initiative",
+        "Sponsored clean streets campaign"
+      ]
+    },
+    {
+      "district": 47,
+      "official": "Council Member 47",
+      "term_start": "2020",
+      "policies": [
+        "Championed park renovations",
+        "Launched education funding initiative",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 48,
+      "official": "Council Member 48",
+      "term_start": "2021",
+      "policies": [
+        "Supported local small businesses",
+        "Expanded mental health services",
+        "Pushed for green energy expansion"
+      ]
+    },
+    {
+      "district": 49,
+      "official": "Council Member 49",
+      "term_start": "2019",
+      "policies": [
+        "Launched education funding initiative",
+        "Advocated for public safety programs",
+        "Introduced affordable housing reform"
+      ]
+    },
+    {
+      "district": 50,
+      "official": "Council Member 50",
+      "term_start": "2020",
+      "policies": [
+        "Expanded mental health services",
+        "Advocated for public safety programs",
+        "Launched education funding initiative"
+      ]
+    },
+    {
+      "district": 51,
+      "official": "Council Member 51",
+      "term_start": "2020",
+      "policies": [
+        "Championed park renovations",
+        "Improved public transportation routes",
+        "Advocated for public safety programs"
+      ]
+    }
+  ]

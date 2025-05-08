@@ -17,32 +17,88 @@
   </style>
 </head>
 <body>
+  <!-- Sidebar Info Panel -->
+  <div id="sidebar" style="
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    max-width: 90%;
+    min-width: 300px;
+    max-height: 40vh;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: left;
+  ">
+    <strong>Select a district</strong>
+  </div>
+
+  <!-- Policy Filter Controls -->
+  <div id="filterBar" style="
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    text-align: center;
+  ">
+    <label><input type="checkbox" class="policy-filter" value="housing"> Housing</label>
+    <label><input type="checkbox" class="policy-filter" value="education"> Education</label>
+    <label><input type="checkbox" class="policy-filter" value="transportation"> Transportation</label>
+    <button onclick="applyFilters()" style="margin-left: 10px;">Filter</button>
+  </div>
+
+  <!-- Search Bar (bottom center) -->
+  <div id="searchBar" style="
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  ">
+    <input type="number" id="searchInput" placeholder="Enter district #" style="width: 150px; padding: 4px;" />
+    <button onclick="searchDistrict()" style="padding: 4px 8px;">Go</button>
+  </div>
+
+  <!-- Map Container -->
   <div id="map"></div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script>
-    // Initialize the map
-    const map = L.map('map').setView([40.7128, -74.006], 10); // NYC center
-
-    // Add OpenStreetMap tiles
+    const map = L.map('map').setView([40.7128, -74.006], 10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Load NYC district GeoJSON
+    let selectedLayer = null;
+    let geojson;
+
     fetch('nyc_districts.geojson')
       .then(response => response.json())
       .then(geoData => {
         fetch('policies.json')
           .then(response => response.json())
           .then(policies => {
-            // Draw district shapes
-            L.geoJSON(geoData, {
+            geojson = L.geoJSON(geoData, {
               onEachFeature: function (feature, layer) {
                 const districtNum = parseInt(feature.properties.CounDist);
-
                 const info = policies.find(p => p.district === districtNum);
+
+                // Save info for later filtering
+                layer.options.info = info;
 
                 let popupContent = `<strong>District ${districtNum}</strong>`;
                 if (info) {
@@ -57,16 +113,83 @@
                   popupContent += `<br>No data available.`;
                 }
 
-                layer.bindPopup(popupContent);
+                layer.on('click', function () {
+                  if (selectedLayer) {
+                    geojson.resetStyle(selectedLayer);
+                  }
+
+                  layer.setStyle({
+                    weight: 3,
+                    color: 'black',
+                    fillOpacity: 0.7,
+                    fillColor: 'yellow'
+                  });
+
+                  selectedLayer = layer;
+                  document.getElementById("sidebar").innerHTML = popupContent;
+                });
               },
-              style: {
-                color: '#3388ff',
-                weight: 1,
-                fillOpacity: 0.2
+              style: function (feature) {
+                const dist = feature.properties.CounDist;
+                return {
+                  color: 'black',
+                  weight: 1,
+                  fillOpacity: 0.4,
+                  fillColor:
+                    (dist >= 1 && dist <= 10) ? "green" :         // Manhattan
+                    (dist >= 11 && dist <= 18) ? "orange" :       // Bronx
+                    (dist >= 19 && dist <= 32) ? "gold" :         // Queens
+                    (dist >= 33 && dist <= 48) ? "blue" :         // Brooklyn
+                    (dist >= 49 && dist <= 51) ? "purple" :       // Staten Island
+                    "gray"
+                };
               }
             }).addTo(map);
           });
       });
+
+    function searchDistrict() {
+      const input = parseInt(document.getElementById("searchInput").value);
+      if (isNaN(input)) return;
+
+      geojson.eachLayer(layer => {
+        const district = parseInt(layer.feature.properties.CounDist);
+        if (district === input) {
+          if (selectedLayer) {
+            geojson.resetStyle(selectedLayer);
+          }
+
+          layer.setStyle({
+            weight: 3,
+            color: 'black',
+            fillOpacity: 0.7,
+            fillColor: 'yellow'
+          });
+
+          selectedLayer = layer;
+          map.fitBounds(layer.getBounds());
+          layer.fire('click');
+        }
+      });
+    }
+
+    function applyFilters() {
+      const checked = Array.from(document.querySelectorAll('.policy-filter:checked')).map(cb => cb.value.toLowerCase());
+
+      geojson.eachLayer(layer => {
+        const info = layer.options.info;
+        if (!info || checked.length === 0) {
+          layer.setStyle({ fillOpacity: 0.4 });
+          return;
+        }
+
+        const matches = info.policies.some(policy =>
+          checked.some(keyword => policy.toLowerCase().includes(keyword))
+        );
+
+        layer.setStyle({ fillOpacity: matches ? 0.6 : 0.1 });
+      });
+    }
   </script>
 </body>
 </html>
