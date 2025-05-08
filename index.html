@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYC Policy Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([40.7128, -74.006], 10); // NYC center
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Load NYC district GeoJSON
+    fetch('nyc_districts.geojson')
+      .then(response => response.json())
+      .then(geoData => {
+        fetch('policies.json')
+          .then(response => response.json())
+          .then(policies => {
+            // Draw district shapes
+            L.geoJSON(geoData, {
+              onEachFeature: function (feature, layer) {
+                const districtNum = parseInt(feature.properties.CounDist);
+
+                const info = policies.find(p => p.district === districtNum);
+
+                let popupContent = `<strong>District ${districtNum}</strong>`;
+                if (info) {
+                  popupContent += `<br><strong>Official:</strong> ${info.official}`;
+                  popupContent += `<br><strong>Term Start:</strong> ${info.term_start}`;
+                  popupContent += `<br><strong>Policies:</strong><ul>`;
+                  info.policies.forEach(policy => {
+                    popupContent += `<li>${policy}</li>`;
+                  });
+                  popupContent += `</ul>`;
+                } else {
+                  popupContent += `<br>No data available.`;
+                }
+
+                layer.bindPopup(popupContent);
+              },
+              style: {
+                color: '#3388ff',
+                weight: 1,
+                fillOpacity: 0.2
+              }
+            }).addTo(map);
+          });
+      });
+  </script>
+</body>
+</html>
